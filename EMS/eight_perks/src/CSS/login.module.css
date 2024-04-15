@@ -1,0 +1,248 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.innerDiv {
+    background-color: white;
+   box-sizing: border-box;
+   position: relative;
+   right: 150px;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+/* Silver Fox:  Deep Matte Grey: #393f4d Dark Slate: #1d1e22  Night Blue: #2d545e Night Blue Shadow: #12343b*/
+.upperDiv{
+    background-image: url('../../public/images/login/newbg.jpg')
+}
+.note{
+    position: relative;
+    right: 320px;
+    bottom: 70px;
+    transform: rotate(31deg);
+    font-size: larger;
+    font-weight: 800;
+    font-family: "Kalam", cursive;
+}
+/* .leftDiv>img{
+    
+border-radius: 8px 0px 0px 8px;
+} */
+.rightDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    height: 98%;
+background: rgb(2, 0, 36);
+    background: linear-gradient(246deg, rgba(2, 0, 36, 1) 0%, rgba(77, 77, 142, 1) 65%, rgba(14, 191, 227, 1) 100%);
+}
+.rightDiv>form>h6{
+    color: white;
+    font-size: 30px;
+}
+.emailDiv{
+    margin-top: 20px;
+    display: flex;
+    width: 340px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 3px;
+    position: relative;
+    background-color: #fff;
+    
+}
+.emailDiv>input{
+    width: 300px;
+    outline: none;
+    height: 38px;
+    border: none;
+    padding-left: 15px;
+    border-radius: 3px;
+    font-size: 18px;
+    font-family:'Times New Roman', Times, serif;
+    color:teal;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.emailDiv>img{
+    width: 27px;
+    height: 23px;
+    align-items: center;
+    margin:auto;
+    transition: 0.2s all;
+}
+.emailDiv>img:active {
+    transform: scale(0.98);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 3px rgba(202, 31, 31, 0.24);
+    /* Lowering the shadow */
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+        bottom: 50px;
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+}
+form>img{
+    width: 120px;
+    height: 120px;
+    position: relative;
+    bottom: 29px;
+}
+
+.formlabel{
+    color: white;
+    margin: 0;
+    padding: 0;
+   position: relative;
+   right: 148px;
+   top: 18px;
+}
+.formlabel2 {
+    color: white;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    right: 137px;
+    top: 18px;
+}
+
+.footer1{
+    color: white;
+    position: relative;
+    bottom: 20px;
+    right: 110px;
+    font-size: 14px;
+}
+
+
+/* CSS */
+.loginbtn {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "kalam",cursive;
+    height: 40px;
+    width: 100px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.loginbtn:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.loginbtn:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.loginbtn:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.forgotpassword{
+    color: white;
+    font-size: 14px;
+    position: relative;
+    left: 110px;
+}
+
+/* //forgot password */
+.row{
+background: rgb(2, 0, 36);
+    background: linear-gradient(246deg, rgba(2, 0, 36, 1) 0%, rgba(77, 77, 142, 1) 65%, rgba(14, 191, 227, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.row>h1{
+    font-size: 35px;
+    color: brown;
+   font-weight: 600;
+   color: white;
+}
+.infoText{
+        color: white;
+    font-size: 16px; 
+   font-family:cursive;
+}
+.formgroup>p{
+    color: white;
+}
+.formgroup>input{
+        width: 340px;
+        height: 40px;
+        border: 2px solid white;
+        border-radius: 3px;
+        background-color: #fff;
+        padding: 10px;
+        color: #36395A;
+        outline: none;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+.formgroup>button{
+    width: 150px;
+    height: 40px;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    position: relative;
+    left: 100px;
+    transition: box-shadow .15s, transform .15s;
+    font-weight: 500;
+}
+
+.formgroup>button:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.formgroup>button:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.formgroup>button:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+.footer{
+    margin-top: 20px;
+    color: white;
+}
+.footer>h5{
+position: relative;
+right: 70px;
+cursor: pointer;
+}
+
