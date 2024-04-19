@@ -79,7 +79,8 @@ export default function Dropdown() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Manager
+                <img className='max-h-7 max-w-7 inline-block ' src="./images/dropdown/manager.png" alt="admin" srcset="" /> &nbsp; &nbsp; Manager
+
                 </Link>
               )}
             </Menu.Item>

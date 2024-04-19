@@ -1,48 +1,44 @@
-*{
-    padding: 0;margin: 0;
-    box-sizing: border-box;
-}
 .main{
-
-    display: flex;
-    justify-content: space-around;
-    min-height: 85vh;
-   
-}
-.left{
+    width:100vw;
+    height: 85vh;
+   background-color: rgb(214, 220, 214);
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    width: 34%;
-    height: auto;
-
+    align-items: center;
 }
-
-.right{
+.left{
+    width: 30%;
+    height: 65%;
     display: flex;
     flex-direction: column;
-    width: 34%;
+    justify-content: center;
+    align-items:center;
+    border-radius: 4px;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    background: rgb(2, 0, 36);
+        background: linear-gradient(246deg, rgba(2, 0, 36, 1) 0%, rgba(77, 77, 142, 1) 65%, rgba(14, 191, 227, 1) 100%);
 }
+h4{
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+}
+h3{
+    font-size: 18px;
+    font-weight: 600;
+        color: white;
+}
+
 input {
     margin-bottom: 20px;
     width: 340px;
     height: 40px;
-    border: 2px solid white;
     border-radius: 3px;
-    background-color: #fff;
+    background-color:#fff;
     padding: 10px;
     color: #36395A;
     outline: none;
 }
-label{
-    color:white;
-}
-input[type='radio']{
-    outline: none;
-    border: none;
-}
-
-
 .button30 {
     align-items: center;
     appearance: none;
@@ -61,9 +57,7 @@ input[type='radio']{
     list-style: none;
     overflow: hidden;
     width: 150px;
-    position: relative;
-    left: 100px;
-    top: 15px;
+
     text-align: left;
     text-decoration: none;
     transition: box-shadow .15s, transform .15s;

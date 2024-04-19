@@ -15,19 +15,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/admin-login" element={<AdminLogin role={"Admin"} />} />
-        <Route path="/hr-login" element={<AdminLogin role={"HR"} />} />
-        <Route
-          path="/employee-login"
-          element={<AdminLogin role={"Employee"} />}
-        />
-        <Route
-          path="/manager-login"
-          element={<AdminLogin role={"Manager"} />}
-        />
+       <Route path="/admin-login" element={<AdminLogin/>} />
+        <Route path="/hr-login" element={<HRLogin />} />
+        <Route path="/manager-login" element={<ManagerLogin/>} />
+        <Route path="/employee-login" element={<EmployeeLogin />} />
+       
         <Route path="/adminDashboard" element={<AdminDashboard />} />
-         <Route path="/managerDashboard" element={<ManagerDashboard/>} />
-        <Route path="/forgot-password" element={<ForgotPassword/>} />
+        <Route path="/managerDashboard" element={<ManagerDashboard />} />
+        <Route path="/employeeDashboard" element={<EmployeeDashboard />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/submitOtp" element={<Otp />} />
     
       </Routes>
     </div>

@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 
 
-export default function AdminLogin() {
+export default function EmployeeLogin() {
 
 const [modal, setModal] = useState(false);
 const navigate = useNavigate()
@@ -37,7 +37,8 @@ function handleShowPassword(){
 }
 
 const handleLogin=()=>{
-  axios.get(`http://localhost:8080/login`, {
+ 
+  axios.get(`http://localhost:8080/employee/login`, {
     headers: {
         'email': email,
         'password': passwordData
@@ -51,7 +52,7 @@ const handleLogin=()=>{
 }
 
 const sendMail= ()=>{
- axios.get(`http://localhost:8080/resetpasswordmail`,{
+ axios.get(`http://localhost:8080/employee/resetpasswordmail`,{
   params:{
    'email':email2
   }
@@ -73,7 +74,7 @@ if(res.data===email2){
   return (
     <Layout>
     <div className={`${style.upperDiv} flex justify-end items-center  w-full min-h-[600px]  `}>
-   
+    
     <div className={`${style.innerDiv}  flex shadow-md flex-col justify-center items-center md:flex-row h-[500px] w-1/3`}>
     
         {/* <div className={`${style.leftDiv} h-1/2 w-full md:w-1/2 md:h-full flex justify-center align-center`}>
@@ -83,7 +84,7 @@ if(res.data===email2){
        
             <form action="">
                <img src="./images/login/lock.png" alt="" srcset="" />
-              <h6 style={{fontFamily:'Kalam'}}>Sign In As Admin</h6>
+              <h6 style={{fontFamily:'Kalam'}}>Sign In As Employee</h6>
 
                  <label className={style.formlabel}>E-mail</label>
                   <div className={style.emailDiv}>

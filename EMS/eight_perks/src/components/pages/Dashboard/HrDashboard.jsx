@@ -6,7 +6,7 @@ import DashboardContent from './DashboardContent'
 
 
 
-function ManagerDashboard({children}) {
+function HrDashboard({children}) {
 const [content,setContent]=useState('')
 const [header,setHeader]=useState('')
 
@@ -19,16 +19,7 @@ const [header,setHeader]=useState('')
 <aside id="default-sidebar" className="relative top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
    <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-700">
       <ul className="space-y-2 font-medium">
-         <li>
-            <Link to="" onClick={()=>{
-               setContent('/addEmpByHr') 
-               setHeader('Add New Emplyee  ')
-               }}  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white group  ">
-            
-               <img src="./images/dashboard/man_plus.png" alt="" srcset="" className="w-9 h-9 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white  " aria-hidden="true" fill="currentColor" viewBox="0 0 18 18"/>
-               <span className="ms-3">Add Employee</span>
-            </Link>
-         </li>
+       
          <li>
             <Link to="" onClick={()=>{
                setContent('/viewEmpByHr')
@@ -58,4 +49,4 @@ const [header,setHeader]=useState('')
   )
 }
 
-export default ManagerDashboard
+export default HrDashboard

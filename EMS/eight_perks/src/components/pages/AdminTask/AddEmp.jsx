@@ -15,10 +15,10 @@ const [designation,setDesignation]=useState('')
 const [pname,setPname]=useState('')
 const [phone,setPhone]=useState('')
 const [sal,setSal]=useState('')
-const [gender,setGender]=useState('Male')
-const [mgr,setMgr]=useState('')
+const [gender,setGender]=useState('')
+const [mgr,setMgr]=useState(false)
 const [mgrname,setMgrName]=useState('')
-const [hr,setHr]=useState('')
+const [hr,setHr]=useState(false)
 const [hid,setHid]=useState('')
 const [mid,setMid]=useState('')
 const [status,setStatus]=useState('')
@@ -120,10 +120,10 @@ catch(err){
 
            <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray" for="user_avatar">Upload Picture</label>
   <input className="block text-sm text-gray-900 border cursor-pointer  focus:outline-none " disabled aria-describedby="user_avatar_help" id="user_avatar" type="file"/>
-       
+
            <button className={style.button30} role="button" onClick={saveEmployee}>Save</button>
         </div>
-    
+
       </div>
     </div>
   )

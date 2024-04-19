@@ -3,7 +3,7 @@ import { TERipple } from "tw-elements-react";
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-800  text-center text-white">
+        <footer className="bg-gray-800   text-center text-white">
             <div className="container flex justify-around items-center px-6 pt-2 mx-auto">
                 <div>
                     <TERipple rippleColor="light">
