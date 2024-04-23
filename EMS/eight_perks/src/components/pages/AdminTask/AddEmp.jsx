@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+
 function AddEmp() {
  const [startDate, setStartDate] = useState(new Date());
 const [empname,setEmpName]=useState('')
@@ -16,9 +17,6 @@ const [pname,setPname]=useState('')
 const [phone,setPhone]=useState('')
 const [sal,setSal]=useState('')
 const [gender,setGender]=useState('')
-const [mgr,setMgr]=useState(false)
-const [mgrname,setMgrName]=useState('')
-const [hr,setHr]=useState(false)
 const [hid,setHid]=useState('')
 const [mid,setMid]=useState('')
 const [status,setStatus]=useState('')
@@ -28,18 +26,18 @@ const navigate=useNavigate()
 const saveEmployee= async()=>{
   const res =  await axios.post('http://localhost:8080/createemployee',
 {
-  empname,email,password,designation,pname,phone,sal,startDate,gender,mgr,
-  mgrname,hr,hid,mid,status
+  empname,email,password,designation,pname,phone,sal,startDate,gender,hid,mid,status
 })
 
 try{
 if(res!=null){
-  toast('Data Saved Successfully.')
-   navigate('/viewEmp')
+ setTimeout(()=>{
+   toast('Employee Saved Successfully.')
+ },4000)
+  
 }
 else{
   toast('Something went wrong..')
- 
 }
 }
 catch(err){
@@ -53,78 +51,108 @@ catch(err){
     <div>
       <div className={style.main}>
         <div className={style.left}>
+         <input
+        type="text"
+        placeholder='Name'
+        className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
+        value={empname}
+        onChange={(e)=>setEmpName(e.target.value)}
+      />
+
+       <input
+        type="password"
+        placeholder='Password'
+        className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
+        value={password}
+        onChange={(e)=>setPassword(e.target.value)}
+      />
+     
+       <input
+        type="text"
+        placeholder='Designation'
+        className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
+        value={designation}
+        onChange={(e)=>setDesignation(e.target.value)}
+      />
         
-          <label htmlFor="">Name</label>
-          <input type="text" name="" id="" value={empname} onChange={(e)=>setEmpName(e.target.value)} />
+         <input
+        type="phone"
+        placeholder='Contact Number'
+        className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
+        value={phone}
+        onChange={(e)=>setPhone(e.target.value)}
+      />
+ 
+        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6" />
 
-          <label htmlFor="">Password</label>
-          <input type="password" name="" id="" value={password} onChange={(e)=>setPassword(e.target.value)} />
-
-           <label htmlFor="">Designation</label>
-          <input type="text" name="" id="" value={designation} onChange={(e)=>setDesignation(e.target.value)} />
-
-        <label htmlFor="">Phone</label>
-          <input type="number" name="" id="" value={phone} onChange={(e)=>setPhone(e.target.value)} />
-        
-        <label htmlFor="">Joining Date</label>
-        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-
-         <label htmlFor="">PName</label>
-          <input type="text" name="" id="" value={pname} onChange={(e)=>setPname(e.target.value)}/>
-
-           <label htmlFor="">Salary</label>
-          <input type="text" name="" id=""value={sal} onChange={(e)=>setSal(e.target.value)} />
-
-           <label htmlFor="">Manager</label>
-          <input type="text" name="" id="" value={mgr} onChange={(e)=>setMgr(e.target.value)} />
-
-           <label htmlFor="">Manager Id</label>
-          <input type="text" name="" id="" value={mid} onChange={(e)=>setMid(e.target.value)} />
-
-        <label htmlFor="">Manager Name</label>
-          <input type="text" name="" id="" value={mgrname} onChange={(e)=>setMgrName(e.target.value)} />
-
+         <input
+        type="text"
+        placeholder='Project Name'
+        className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
+        value={pname}
+        onChange={(e)=>setPname(e.target.value)}
+      /> 
         </div>
         <div className={style.right}>
-          <label htmlFor="">Email</label>
-          <input type="email" name="" id="" value={email} onChange={(e)=>setEmail(e.target.value)} />
+         <input
+        type="email"
+        placeholder='Email'
+        className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
+        value={email}
+        onChange={(e)=>setEmail(e.target.value)}
+      /> 
+      
+       <input
+        type="text"
+        placeholder='Salary'
+        className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
+        value={sal}
+        onChange={(e)=>setSal(e.target.value)}
+      /> 
 
-          <fieldset>
- 
-  <label htmlFor="">Select Gender</label>
-  <div className="flex items-center mb-4">
-    <input id="gender-option-1" type="radio" name="gender" value="Male" className="w-5 h-5 " onChange={(e)=>setGender(e.target.value)} checked={gender==='Male'}/>
-    <label for="gender-option-1" className="block ms-2  text-md font-medium text-white ">
+           <input
+        type="text"
+        placeholder='Manager Id'
+        className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
+        value={mid}
+        onChange={(e)=>setMid(e.target.value)}
+      /> 
+ <input
+        type="text"
+        placeholder='HR Id'
+        className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
+        value={hid}
+        onChange={(e)=>setHid(e.target.value)}
+      /> 
+
+           
+  <select id="underline_select" value={status} onChange={(e)=>setStatus(e.target.value)}  className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6">
+      <option className='bg-gray-500 text-gray-400' selected>Choose Status</option>
+      <option className='bg-gray-500' value="On Bench">On Bench</option>
+      <option className='bg-gray-500' value="On Project">On Project</option>
+  </select> 
+
+  <label htmlFor="" className='text-gray-400'>Gender</label>
+    <div className="flex ">
+  <div className="flex items-center w-40 mt-3">
+    <input id="gender-option-1" type="radio" name="gender" value="Male" className="w-5 h-5 " onChange={(e)=>setGender(e.target.value)} checked={gender === 'Male'}/>
+    <label for="gender-option-1" className="block ms-2 relative left-3  bottom-2 text-md font-md text-gray-400 ">
      Male
     </label>
   </div>
-
-  <div className="flex items-center mb-4">
-    <input id="gender-option-2" type="radio" name="gender" value="Female" className="w-5 h-5" onChange={(e)=>setGender(e.target.value)} checked={gender==='Female'}/>
-    <label for="gender-option-2" className="block ms-2 text-md font-medium text-white">
+  <div className="flex items-center w-40 mt-3">
+    <input id="gender-option-2" type="radio" name="gender" value="Female" className="w-5 h-5" onChange={(e)=>setGender(e.target.value)} checked={gender === 'Female'}/>
+    <label for="gender-option-2" className="block ms-2 relative left-3  bottom-2   text-md font-md text-gray-400">
       Female
     </label>
   </div>
-  </fieldset>
-   <label htmlFor="">HR</label>
-          <input type="text" name="" id="" value={hr} onChange={(e)=>setHr(e.target.value)}/>
+  </div>
 
-           <label htmlFor="">HR ID</label>
-          <input type="text" name="" id="" value={hid} onChange={(e)=>setHid(e.target.value)} />
-
-           <label htmlFor="">Status</label>
-          <input type="text" name="" id="" value={status} onChange={(e)=>setStatus(e.target.value)} />
-
-           <label htmlFor="">Adress</label>
-          <input type="textarea" name="" id="" disabled placeholder='disabled'/>
-
-           <label className="block mb-2 text-md font-medium text-gray-900 dark:text-gray" for="user_avatar">Upload Picture</label>
-  <input className="block text-sm text-gray-900 border cursor-pointer  focus:outline-none " disabled aria-describedby="user_avatar_help" id="user_avatar" type="file"/>
-
-           <button className={style.button30} role="button" onClick={saveEmployee}>Save</button>
         </div>
 
       </div>
+                <button className={style.button30} onClick={saveEmployee} >Save</button>
+
     </div>
   )
 }

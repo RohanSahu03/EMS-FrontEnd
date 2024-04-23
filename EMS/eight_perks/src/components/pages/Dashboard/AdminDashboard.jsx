@@ -23,7 +23,7 @@ const [header,setHeader]=useState('')
             <Link to="" onClick={()=>{
                setContent('/addEmp') 
                setHeader('Add New Emplyee  ')
-               }}  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  hover:bg-gray-700 group  ">
+               }}  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  hover:bg-gray-800 group  ">
             
                <img src="./images/dashboard/man_plus.png" alt="" srcset="" className="w-9 h-9 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white  " aria-hidden="true" fill="currentColor" viewBox="0 0 18 18"/>
                <span className="ms-3">Add Employee</span>
@@ -33,7 +33,7 @@ const [header,setHeader]=useState('')
             <Link to="" onClick={()=>{
                setContent('/viewEmp')
                 setHeader('Emplyee Details ')
-               }} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 group">
+               }} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  hover:bg-gray-800 group">
                 <img src="./images/dashboard/team.png" alt="" srcset="" className="w-9 h-9 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white  " aria-hidden="true" fill="currentColor" viewBox="0 0 18 18"/>
                <span className="flex-1 ms-3 whitespace-nowrap">View Employee</span>
               
@@ -43,9 +43,19 @@ const [header,setHeader]=useState('')
             <Link to="" onClick={()=>{
                setContent('/addAdmin')
                 setHeader('Add New Admin ')
-               }} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 group">
+               }} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-800 group">
                <img src="./images/dashboard/admin.png" alt="" srcset="" className="w-9 h-9 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white  " aria-hidden="true" fill="currentColor" viewBox="0 0 18 18"/>
                <span className="flex-1 ms-3 whitespace-nowrap">Add Admin</span>
+            </Link>
+         </li>
+
+           <li>
+            <Link to="" onClick={()=>{
+               setContent('/add-client')
+                setHeader('Add Client Details ')
+               }} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  hover:bg-gray-800 group">
+               <img src="./images/dashboard/addClient.png" alt="" srcset="" className="w-9 h-9 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white  " aria-hidden="true" fill="currentColor" viewBox="0 0 18 18"/>
+               <span className="flex-1 ms-3 whitespace-nowrap">Add Client</span>
             </Link>
          </li>
 
@@ -53,8 +63,8 @@ const [header,setHeader]=useState('')
             <Link to="" onClick={()=>{
                setContent('/view-clients')
                 setHeader('Client Details ')
-               }} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  dark:hover:bg-gray-700 group">
-               <img src="./images/dashboard/admin.png" alt="" srcset="" className="w-9 h-9 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white  " aria-hidden="true" fill="currentColor" viewBox="0 0 18 18"/>
+               }} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  hover:bg-gray-800 group">
+               <img src="./images/dashboard/client.png" alt="" srcset="" className="w-9 h-9 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white  " aria-hidden="true" fill="currentColor" viewBox="0 0 18 18"/>
                <span className="flex-1 ms-3 whitespace-nowrap">View Clients</span>
             </Link>
          </li>
