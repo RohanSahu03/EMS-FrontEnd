@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/EMS-FrontEnd/static/css/main.07057fb0.css",
+    "main.js": "/EMS-FrontEnd/static/js/main.e0ed39c6.js",
+    "static/js/976.b2005e9d.chunk.js": "/EMS-FrontEnd/static/js/976.b2005e9d.chunk.js",
+    "static/js/893.2c6dfd11.chunk.js": "/EMS-FrontEnd/static/js/893.2c6dfd11.chunk.js",
+    "static/js/453.0f626ca5.chunk.js": "/EMS-FrontEnd/static/js/453.0f626ca5.chunk.js",
+    "static/media/newbg.jpg": "/EMS-FrontEnd/static/media/newbg.3b57871e1709a804f510.jpg",
+    "index.html": "/EMS-FrontEnd/index.html",
+    "main.07057fb0.css.map": "/EMS-FrontEnd/static/css/main.07057fb0.css.map",
+    "main.e0ed39c6.js.map": "/EMS-FrontEnd/static/js/main.e0ed39c6.js.map",
+    "976.b2005e9d.chunk.js.map": "/EMS-FrontEnd/static/js/976.b2005e9d.chunk.js.map",
+    "893.2c6dfd11.chunk.js.map": "/EMS-FrontEnd/static/js/893.2c6dfd11.chunk.js.map",
+    "453.0f626ca5.chunk.js.map": "/EMS-FrontEnd/static/js/453.0f626ca5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07057fb0.css",
+    "static/js/main.e0ed39c6.js"
+  ]
+}
