@@ -8,7 +8,7 @@ function Layout({children}) {
   return (
     <div >
         <Header/>
-        <main>
+        <main className=''>
           <ToastContainer/>
         {children}
         </main>

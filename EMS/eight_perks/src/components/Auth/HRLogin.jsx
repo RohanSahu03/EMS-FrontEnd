@@ -18,7 +18,7 @@ const [passwordData,setpasswordData]=useState('');
 const [showPasswordData,setShowPasswordData]=useState(false);
 const [itype,setItype]=useState('password')
 const [email2,setEmail2]=useState('')
-
+let role='hr';
 
 
 function handleInput(e){
@@ -36,39 +36,47 @@ function handleShowPassword(){
   }
 }
 
-const handleLogin=()=>{
- 
-  axios.get(`http://localhost:8080/hr/login`, {
+const handleLogin=async()=>{
+ try {
+  const res= await axios.get(`http://localhost:8080/hr/login`, {
     headers: {
         'email': email,
         'password': passwordData
     }
- }).then((res)=>{
-  if(res!=null){
-    localStorage.setItem('otp',res.data)
-   navigate('/submitOtp')
+  })
+  if(res.status===302){
+    toast('please check your email') 
+    setTimeout(()=>{
+      localStorage.setItem('otp',res.data)
+      navigate('/submitOtp',{state:role})
+    },3000)
   }
- }).catch((err)=>console.log(err))
+ } catch (error) {
+  if(error.response){
+  toast('Enter Valid Credentials')
+}
+ }
 }
 
-const sendMail= ()=>{
- axios.get(`http://localhost:8080/hr/resetpasswordmail`,{
+const sendMail= async()=>{
+  try{
+ const res=await axios.get(`http://localhost:8080/hr/resetpasswordmail`,{
   params:{
    'email':email2
   }
  })
-.then((res)=>{
-if(res.data===email2){
-  console.log(res)
-    toast('please check your email account')
+ if(res.status===200){
+  if(res.data===email2){
+    toast('please check your email')
     localStorage.setItem('email',res.data)
   }
-  else{
-    toast('enter valid email id')
+ }
   }
-})
-.catch((err)=>console.log(err))
-  
+  catch(error){
+ if(error.response){
+  toast('Enter Valid Email ID')
+}
+  }
 }
 
   return (

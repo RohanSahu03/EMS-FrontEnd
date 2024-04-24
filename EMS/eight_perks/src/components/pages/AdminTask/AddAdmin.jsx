@@ -1,7 +1,28 @@
-import React from 'react'
+import React,{useState}from 'react'
 import style from '../../../CSS/addEmp.module.css'
+import { toast } from 'react-toastify'
+import axios from 'axios'
 
 function AddAdmin() {
+  const [name,setName]=useState('')
+const [email,setEmail]=useState('')
+const [password,setPassword]=useState('')
+const [phone,setPhone]=useState('')
+const [address,setAddress]=useState('')
+const [designation,setDesignation]=useState('')
+
+const saveAdmin=()=>{
+  axios.post('http:localhost:8080/addadmin',{
+    name,email,phone,password,address,designation
+  })
+  .then((res)=>{
+    toast('admin saved suucessfully')
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+}
+
   return (
     <div>
       <div className={style.main}>
@@ -11,21 +32,24 @@ function AddAdmin() {
         type="text"
         placeholder='Admin Name'
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
-       
+       onChange={(e)=>setName(e.target.value)}
+       value={name}
       />
 
          <input
         type="email"
         placeholder='Email'
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
-       
+         onChange={(e)=>setEmail(e.target.value)}
+       value={email}
       />
 
        <input
         type="password"
         placeholder='Password'
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
-       
+         onChange={(e)=>setPassword(e.target.value)}
+       value={password}
       />
      
      
@@ -33,7 +57,8 @@ function AddAdmin() {
         type="text"
         placeholder='Address'
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
-       
+         onChange={(e)=>setAddress(e.target.value)}
+       value={address}
       />
         </div>
         <div className={style.right}>
@@ -41,13 +66,15 @@ function AddAdmin() {
         type="phone"
         placeholder='Phone'
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
-       
+         onChange={(e)=>setPhone(e.target.value)}
+       value={phone}
       />
       <input
         type="text"
         placeholder='Designation'
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
-       
+        onChange={(e)=>setDesignation(e.target.value)}
+       value={designation}
       /> 
  <select id="underline_select"  className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6">
       <option className='bg-gray-500 text-gray-400' selected>Choose Mode</option>
@@ -72,7 +99,7 @@ function AddAdmin() {
   </div>
         </div>
       </div>
-       <button className={style.buttonadmin}>Save</button>
+       <button className={style.buttonadmin} onClick={saveAdmin}>Save</button>
     </div>
   )
 }

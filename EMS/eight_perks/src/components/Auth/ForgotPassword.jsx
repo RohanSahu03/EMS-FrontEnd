@@ -1,18 +1,27 @@
 import React, {useState,useEffect, useRef } from 'react'
 import Layout from '../Layout'
-import { useNavigate} from 'react-router-dom'
+import { useLocation, useNavigate} from 'react-router-dom'
 import style from '../../CSS/otp.module.css'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
 function ForgotPassword() {
   let navigate = useNavigate()
+   
     const [password,setPassword]=useState('')
      const [cpassword,setCPassword]=useState('')
-    let localEmail=useRef('')
-     useEffect(() => {
-      localEmail.current=localStorage.getItem('email')
-     }, [])
+    const location = useLocation()
+    let email=useRef('')
+    let designation=useRef('')
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    
+     email.current = searchParams.get('email');
+     designation.current = searchParams.get('designation');
+
+  }, [location.search]); 
+
      
 
 let config = {
@@ -20,7 +29,7 @@ let config = {
   maxBodyLength: Infinity,
   url: 'http://localhost:8080/resetpassword',
   headers: { 
-    'email': localEmail, 
+    'email': email, 
     'password': password
   }
  
@@ -29,20 +38,32 @@ let config = {
  
   
   const resetPassword= ()=>{
-    // let localEmail = localStorage.getItem('email')
  
       if(password===cpassword){
      axios.request(config)
       .then((res)=>{
-           if(res!=null){
+           if(res.status===200){
             toast('password reset successfully')
+               if(designation==='admin'){
             navigate('/admin-login')
-          }
-          else{
-            toast(res.data)
+           }
+           if(designation==='employee'){
+            navigate('/employee-login')
+           }
+            if(designation==='hr'){
+            navigate('/hr-login')
+           }
+           if(designation==='manager'){
+            navigate('/manager-login')
+           }
+          
           }
       })
-      .catch((err)=>console.log(err))
+      .catch((error)=>{
+        if(error.response){
+  toast('Enter Valid Credentials')
+  } 
+      })
     }else{
       toast('password mismatched')
     }

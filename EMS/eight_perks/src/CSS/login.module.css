@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 .innerDiv {
+   
     background-color: white;
    box-sizing: border-box;
    position: relative;
@@ -12,7 +13,10 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
 }
 /* Silver Fox:  Deep Matte Grey: #393f4d Dark Slate: #1d1e22  Night Blue: #2d545e Night Blue Shadow: #12343b*/
 .upperDiv{
-    background-image: url('../../public/images/login/newbg.jpg')
+    background-image: url('../../public/images/login/newbg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+   
 }
 .note{
     position: relative;

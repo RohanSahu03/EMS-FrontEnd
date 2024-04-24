@@ -3,6 +3,7 @@ import style from '../../../CSS/addEmp.module.css'
 
 
 function AddClient() {
+  
   return (
     <div>
         <div className=" flex justify-center items-center  item-center h-[520px]">
