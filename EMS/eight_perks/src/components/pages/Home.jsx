@@ -7,7 +7,7 @@ function Home() {
    <Layout>
      <div className=' h-dvh '>
    
-       <img className='object-cover w-screen h-full brightness-50  ' src="./images/emp.png" alt="img" srcset="" /> 
+       <img className='object-cover w-screen h-full brightness-50' src="./images/emp.png" alt="img" srcset="" /> 
      </div>
    </Layout>
   )
