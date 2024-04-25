@@ -12,14 +12,20 @@ const [address,setAddress]=useState('')
 const [designation,setDesignation]=useState('')
 
 const saveAdmin=()=>{
-  axios.post('http:localhost:8080/addadmin',{
+  axios.post('http://localhost:8080/createadmin',{
     name,email,phone,password,address,designation
   })
   .then((res)=>{
-    toast('admin saved suucessfully')
+    if(res.status===200){
+toast('admin saved suucessfully')
+    }
+    
   })
-  .catch((err)=>{
-    console.log(err);
+  .catch((error)=>{
+    if(error.response){
+      toast('Something went wrong')
+    toast('Please try again..')
+    }
   })
 }
 

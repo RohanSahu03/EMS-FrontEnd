@@ -20,6 +20,7 @@ const [gender,setGender]=useState('')
 const [hid,setHid]=useState('')
 const [mid,setMid]=useState('')
 const [status,setStatus]=useState('')
+const [mode,setMode]=useState('')
 
 const navigate=useNavigate()
 
@@ -92,6 +93,12 @@ catch(err){
         value={pname}
         onChange={(e)=>setPname(e.target.value)}
       /> 
+
+       <select id="underline_select" value={mode} onChange={(e)=>setMode(e.target.value)}  className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6">
+      <option className='bg-gray-500 text-gray-400' selected>Mode</option>
+      <option className='bg-gray-500' value="Active">Active</option>
+      <option className='bg-gray-500' value="Inactive">Inactive</option>
+  </select> 
         </div>
         <div className={style.right}>
          <input
@@ -103,7 +110,7 @@ catch(err){
       /> 
       
        <input
-        type="text"
+        type="number"
         placeholder='Salary'
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-full py-2 pl-2 mb-6"
         value={sal}
