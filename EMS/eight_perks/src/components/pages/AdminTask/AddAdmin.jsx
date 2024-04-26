@@ -17,7 +17,7 @@ const saveAdmin=()=>{
   })
   .then((res)=>{
     if(res.status===200){
-toast('admin saved suucessfully')
+toast('admin saved sucessfully')
     }
     
   })

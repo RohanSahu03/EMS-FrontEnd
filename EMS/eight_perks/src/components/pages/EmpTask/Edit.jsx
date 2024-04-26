@@ -38,14 +38,21 @@ function Edit() {
 
     },[])
 
-    const updateEmployee=()=>{
+    const updateEmp=()=>{
             axios.put('http://localhost:8080/employee/edit',{
                 empname,email,password,phone,password
             })
             .then((res)=>{
-                    toast('profile updated successfully..')
+                   if(res.status===200){
+                    toast('employee updated successfully')
+                   }
             })
-            .catch((err)=>console.log(err))
+            .catch((err)=>{
+              if(err.response){
+                toast('something went wrong..')
+                 toast('please try again')
+              }
+            })
     }
 
     const handleImageClick=()=>{
@@ -73,8 +80,8 @@ function Edit() {
           <input
         type="text"
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-50% py-2 pl-2 mb-6"
-        value={phone}
-        onChange={(e)=>setPhone(e.target.value)}
+        value={empname}
+        onChange={(e)=>setEmpName(e.target.value)}
       />
                
           <label for="first_name" className="block  text-sm font-medium text-gray-900 dark:text-white">Phone</label>
@@ -89,16 +96,16 @@ function Edit() {
        <input
         type="email"
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-50% py-2 pl-2 mb-6"
-        value={phone}
-        onChange={(e)=>setPhone(e.target.value)}
+        value={email}
+        onChange={(e)=>setEmail(e.target.value)}
       />
 
         <label for="" className="block  text-sm font-medium text-gray-900 dark:text-white">Address</label>
        <input
         type='text'
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-50% py-2 pl-2 mb-6"
-        value={phone}
-        onChange={(e)=>setPhone(e.target.value)}
+        value={address}
+        onChange={(e)=>setAddress(e.target.value)}
       />
     
         </div>
@@ -109,8 +116,8 @@ function Edit() {
   <input
         type="text"
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-50% py-2 pl-2 mb-6"
-        value={phone}
-        onChange={(e)=>setPhone(e.target.value)}
+        value={designation}
+       
         disabled
       />
 
@@ -118,8 +125,8 @@ function Edit() {
   <input
         type="text"
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-50% py-2 pl-2 mb-6"
-        value={phone}
-        onChange={(e)=>setPhone(e.target.value)}
+        value={hid}
+       
         disabled
       />
 
@@ -127,7 +134,7 @@ function Edit() {
   <input
         type="text"
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-50% py-2 pl-2 mb-6"
-        value={phone}
+        value={status}
         onChange={(e)=>setPhone(e.target.value)}
         disabled
       />
@@ -136,14 +143,14 @@ function Edit() {
        <input
         type='text'
         className="border-b-2 bg-transparent text-white border-gray-300 focus:outline-none focus:border-red-500 w-50% py-2 pl-2 mb-6"
-        value={phone}
-        onChange={(e)=>setPhone(e.target.value)}
+        value={mid}
+       
         disabled
       />
 
         </div>
       </div>
-     <button className={style.buttonEmp}>Update</button>   
+     <button className={style.buttonEmp} onClick={updateEmp}>Update</button>   
         
     </div>
    

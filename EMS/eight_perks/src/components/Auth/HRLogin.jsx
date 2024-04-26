@@ -44,7 +44,7 @@ const handleLogin=async()=>{
         'password': passwordData
     }
   })
-  if(res.status===302){
+  if(res.status===200){
     toast('please check your email') 
     setTimeout(()=>{
       localStorage.setItem('otp',res.data)

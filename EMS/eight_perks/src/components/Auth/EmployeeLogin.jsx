@@ -55,25 +55,26 @@ function handleShowPassword(){
 //   })
 // }
 
-const handleLogin= async()=>{
-  console.log(email,passwordData)
+const handleLogin=async()=>{
  try {
-  const res = await axios.get(`http://localhost:8080/employee/login`, {
+   const res = await axios.get(`http://localhost:8080/login`, {
     headers: {
         'email': email,
         'password': passwordData
     }
-  })
-  if(res){
-    toast('please check your email') 
+ })
+  if(res.status===200){
+    toast('Please check your email ')
+     setTimeout(()=>{
       localStorage.setItem('otp',res.data)
-      navigate('/submitOtp',{state:role})
-  
+     navigate('/submitOtp',{state:role})
+     },4000)
   }
+
  } catch (error) {
-  if(error.response){
+if(error.response){
   toast('Enter Valid Credentials')
-}
+}  
  }
 }
 
